@@ -27,7 +27,7 @@ function App() {
   const fetchNews = async (category) => {
     try {
       setLoading(true);
-      const url = `http://localhost:8000/news?category=${category}`;
+      const url = `https://news-backend-bdid.onrender.com/news?category=${category}`;
       const response = await axios.get(url);
       if (response.data.news_articles && response.data.news_articles.length > 0) {
         setNewsArticles(response.data.news_articles);
@@ -38,7 +38,7 @@ function App() {
       }
       setLoading(false);
     } catch (err) {
-      setError('Failed to connect to backend. Ensure it is running at http://localhost:8000.');
+      setError('Failed to connect to backend. Ensure it is running at https://news-backend-bdid.onrender.com.');
       setLoading(false);
       console.error(err);
     }

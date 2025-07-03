@@ -24,7 +24,7 @@ function ArticleSummary() {
       setLoadingSummary(true);
       try {
         const query = `Summarize this article: ${decodedUrl}`;
-        const res = await fetch('http://localhost:8000/query', {
+        const res = await fetch('https://news-backend-bdid.onrender.com/query', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ input: query }),
@@ -52,7 +52,7 @@ function ArticleSummary() {
     setLoadingTranslation(true);
     try {
       const query = `Translate this text to ${langCode}: ${summary}`;
-      const res = await fetch('http://localhost:8000/query', {
+      const res = await fetch('https://news-backend-bdid.onrender.com/query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ input: query }),
